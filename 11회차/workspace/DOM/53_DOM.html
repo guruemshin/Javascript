@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <script>
+        function sub(){
+            let firstSon=document.querySelector("#firstSon");
+            let firstSonParnet=firstSon.parentNode;
+
+            let dauther=document.querySelector("#dauther");
+            let dautherParnet=dauther.parentNode;
+
+            let seconSon=document.querySelector("#seconSon");
+            let seconSonParnet=seconSon.parentNode;
+            let seconSonGrandParent=seconSon.parentNode.parentNode;
+
+
+            let disp=document.querySelector("#disp");
+            let str=firstSonParnet.nodeName + "<br>";
+            str += dautherParnet.nodeName + "<br>";
+            str += seconSonParnet.nodeName + "<br>";
+            str += seconSonGrandParent.nodeName + "<br>";
+            disp.innerHTML=str;
+
+
+        }
+    </script>
+</head>
+<body onload="sub()">
+    <h3>부모 DOM</h3>
+    <div id="grandfather">
+        <div id="father">
+            <span id="firstSon">첫째입니다.</span>
+            <span id="dauther">둘째입니다.</span>
+            <span id="seconSon">셋째입니다.</span>
+        </div>
+    </div>
+    <br><br>
+
+    <disp id="disp"></disp>
+
+</body>
+</html>

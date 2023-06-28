@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <script>
+        function sub(){
+
+            let ul=document.createElement("ul");
+
+            for(let i=0; i<5; i++){
+                let li=document.createElement("li");
+                li.innerText="자바스크립트";
+
+                ul.appendChild(li);
+                
+            }
+
+            let ol=document.createElement("ol");
+
+            for(let i=0; i<5; i++){
+                let li=document.createElement("li");
+                li.innerText="TEXT&CSS";
+
+                ol.appendChild(li);
+            }
+            let exam=document.querySelector("#exam");
+            exam.appendChild(ul); //추가
+            exam.replaceChild(ol,ul); //교체
+            exam.removeChild(ol);   //삭제
+        }
+    </script>
+</head>
+<body onload="sub()">
+    <h3>생성 ,추가, 치환,삭제</h3>
+    <div id="exam">
+
+    </div>
+</body>
+</html>

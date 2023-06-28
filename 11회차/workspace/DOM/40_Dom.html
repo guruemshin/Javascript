@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        li{
+            list-style-type: none;
+        }
+    </style>
+
+    <script>
+        function test(){
+        //    alert("OK");
+        let div=document.getElementsByTagName("div");
+        div[0].innerHTML="<h3>가</h3>"; //0=0번지 가-><div>태그 안으로 간다
+        div[1].innerHTML="<h3>나</h3>";
+        div[2].innerHTML="<h3>다</h3>";
+        div[3].innerHTML="<h3>라</h3>";    
+
+        let result=document.getElementById("result");
+        result.innerHTML="<h3 style='color:red'>Hello</h3>";
+
+        let li=document.getElementsByClassName("friut");
+        li[0].innerHTML="<h3>사과</h3>";
+        li[1].innerHTML="<h3>바나나</h3>";
+        li[2].innerHTML="<h3>딸기</h3>";
+
+        
+
+        }
+    </script>
+</head>
+<body>
+    <!--Tag선택자-->
+
+
+    <div></div><!-- 0번지 -->
+    <div></div><!-- 1번지 -->
+    <div></div><!-- 2번지 -->
+    <div></div><!-- 3번지 -->
+
+
+    <!--ID선택자-->
+    <div id="result"></div>
+    
+
+    <!--Class선택자-->
+    <ul>
+        <li class="friut"></li>
+        <li class="friut"></li>
+        <li class="friut"></li>
+    </ul>
+
+
+    <input type="button" value="click" onclick="test()">
+</body>
+</html>

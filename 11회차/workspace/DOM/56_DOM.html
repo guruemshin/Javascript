@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sub(){
+            let divNode=document.createElement("div");
+
+            let spanNode=document.createElement("span");
+            spanNode.innerText="목요일 입니다.";
+
+            let brNode=document.createElement("br");
+
+            let ulNode=document.createElement("ul");
+
+            let liNode01=document.createElement("li");
+            liNode01.innerText="사과";
+            
+            let liNode02=document.createElement("li");
+            liNode02.innerText="바나나";
+
+            let liNode03=document.createElement("li");
+            liNode03.innerHTML="딸기"
+
+            divNode.appendChild(spanNode);
+            document.body.appendChild(divNode);
+            document.body.appendChild(brNode);
+
+            ulNode.appendChild(liNode01);
+            ulNode.appendChild(liNode02);
+            ulNode.appendChild(liNode03);
+            document.body.appendChild(ulNode);
+        }
+    </script>
+</head>
+<body onload="sub()">
+    <h3>노드생성 추가 치환 삭제  </h3>
+</body>
+</html>

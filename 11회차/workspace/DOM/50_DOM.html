@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>DOM</title>
+</head>
+<body>
+      <script>
+            function sub1(){
+               let arr=new Array();
+
+               let test=document.querySelector("#test");
+               arr.push(test.childNodes.length);
+
+               let span=test.querySelectorAll("span");
+               arr.push(span.length);
+
+               for(let i=0;i<span.length;i++){
+                  arr.push(span[i].childNodes[0].nodeValue);
+               }
+
+               alert(arr.join("\n"));
+            }
+
+            function sub2(){
+               let arr=new Array();
+
+               let exam=document.querySelector("#exam");
+               let divList=exam.querySelectorAll("div");
+               arr.push(divList.length);
+
+               for(let i=0;i<divList.length;i++){
+                     let span=divList[i].querySelectorAll("span");
+                     arr.push(span.length);
+
+                     for(let j=0;j<span.length;j++){
+                        arr.push(span[j].childNodes[0].nodeValue);
+                     }
+
+                     arr.push("\n");
+               }
+
+              alert(arr.join("\n"));
+
+            }
+      </script>
+      <div id="test">
+               <span>SAPN1 태그</span>
+               <span>SAPN2 태그</span>
+               <span>SAPN3 태그</span>
+               <span>SAPN4 태그</span>
+      </div><br><br>
+      <input type="button" value="클릭1" onclick="sub1()"/>
+      <br><br>
+      
+      <div id="exam">
+         <div>
+                  <span>가</span>
+                  <span>나</span>
+                  <span>다</span>
+         </div>
+         
+         <div>
+                  <span>A</span>
+                  <span>B</span>
+                  <span>C</span>
+         </div>
+   </div><br><br>
+   <input type="button" value="클릭2" onclick="sub2()"/>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div id="desc">
+        <p style="color:red">이름:신규림</p>
+        <p>주소:서울시 강남구</p>
+
+
+
+
+        <p>연락처:010-1234-1234</p>
+    </div>
+    <input type="button" value="확인" onclick="apple()">
+
+    <script>
+        function apple(){
+            var div=document.querySelector("#desc");
+            alert(div.innerText); //text만 뽑아오기
+            alert(div.innerHTML); //tag,공백 까지 뽑아오기
+            alert(div.textContent); //공백까지 전부 뽑아오기
+        }
+    </script>
+</body>
+</html>

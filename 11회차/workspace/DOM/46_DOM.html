@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h3>이미지 출력 on change 이벤트</h3>
+    <form id="myform">
+        <input name="select" type="radio" value="cup-1" onchange="inputChange()">
+        <label>선택 1</label>
+
+
+        <input name="select" type="radio" value="cup-2" onchange="inputChange()">
+        <label>선택 2</label>
+
+
+        <input name="select" type="radio" value="cup-3" onchange="inputChange()">
+        <label>선택 3</label>
+
+
+        <input name="select" type="radio" value="cup-4" onchange="inputChange()">
+        <label>선택 4</label>
+
+
+        <input name="select" type="radio" value="cup-5" onchange="inputChange()">
+        <label>선택 5</label>
+
+    </form>
+    <br><br>
+
+    <!-- 이미지 출력 -->
+
+    <div id="radioImg">
+
+    </div>
+    <script>
+        function inputChange(){
+            let radio=document.querySelectorAll("#myform > input");
+            // alert(radio.length);
+
+            let radioImg=document.querySelector("#radioImg");
+            for(let i=0; i < radio.length; i++){
+                if(radio[i].checked==true){
+                    // alert(radio[i].value);
+                    radioImg.innerHTML="<img width='150' height='200' src='./../image/"+ radio[i].value + ".jpg'>";
+                }
+            }    
+        }
+    </script>
+    <br><br>
+    <select id="mySelect" name="select" onchange="selChange()">
+
+        <option></option>
+        <option value="cup-1"> 선택 1 </option>
+        <option value="cup-2"> 선택 2 </option>
+        <option value="cup-3"> 선택 3 </option>
+        <option value="cup-4"> 선택 4 </option>
+        <option value="cup-5"> 선택 5 </option>
+    </select>
+    <br><br>
+
+    <div id="selectImg"></div>
+
+    <script>
+        function selChange(){
+            // alert("OK");
+
+            let select=document.querySelector("#mySelect");
+            let option=select.options[select.selectedIndex];
+            // alert(option.value + ",,,," + select.value);
+
+            let selectImg=document.querySelector("#selectImg");
+
+            selectImg.innerHTML="<img width='150' height='200' src='./../image/" + option.value + ".jpg'>";
+
+        }
+    </script>
+
+</body>
+</html>

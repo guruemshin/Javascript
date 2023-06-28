@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div di="melon">
+
+    </div>
+
+    <script>
+        function sub(){
+        let arr=new Array();
+
+        let melon=document.querySelector("#melon");
+        let melonChild=melon.childNodes;
+        arr.push(melonChild.length);
+        
+        for(let i=0; i<melonChild.length; i++){
+            arr.push("노드이름:" + melonChild[i].nodeName);
+            arr.push("노드 값:" + melonChild[i].nodeValue);
+            arr.push("노드 타입:" + melonChild[i].nodeType);
+            arr.push("\n");
+
+        }
+
+        for(let i=0; i<melonChild.length; i++){
+
+            if(melonChild[i].nodeType==1){
+                arr.push(melonChild[i].childNodes[0].nodeValue);
+            }
+        }
+
+        alert(arr.join("\n"));
+        }
+
+
+    </script>
+</body>
+</html>

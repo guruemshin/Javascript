@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <script>
+        function sub(){
+            let div=document.createElement("div");
+            div.style.textAlign="center";
+
+            let span=document.createElement("span");
+            span.style.color="red";
+            span.innerText="안녕하세요";
+
+            div.appendChild(span);
+            document.body.appendChild(div);
+
+
+        }
+    </script>
+</head>
+<body onload="sub()">
+    <h3>생성 추가</h3>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+</head>
+<body>
+    <script>
+        function sub(){
+            let arr=new Array();
+
+
+            let div=document.querySelectorAll("div");
+            // alert(div[0].nodeName);
+            arr.push(div[0].nodeName + "," + div[0].nodeValue);
+            arr.push(div[0].childNodes[0].nodeName + "," + div[0].childNodes[0].nodeValue);
+
+
+            let h3=document.querySelectorAll("h3");
+            arr.push(h3[0].nodeName + "," + h3[0].nodeValue);
+            arr.push(h3[0].childNodes[0].nodeName + "," + h3[0].childNodes[0].nodeValue);
+            arr.push(h3[0].childNodes[1].nodeName + "," + h3[0].childNodes[1].nodeValue);
+            arr.push(h3[0].childNodes[1].childNodes[0].nodeName 
+                               + "," + h3[0].childNodes[1].childNodes[0].nodeValue);
+
+            alert(arr.join("\n"));
+        }
+    </script>    
+    
+    <div>나는 사과를 좋아해</div><br>
+    <h3>나는 자몽을 좋아해<i>아주많이</i></h3>
+
+    <input type="button" value="click" onclick="sub()">
+
+    <br><br>
+    <span id="melon">
+        <span>가</span>
+        <span>나</span>
+        <span>다</span>
+    </span>
+    <br><br>
+    <input type="button" value="click" onclick="disp()">
+    <br><br>
+    <script>
+        function disp(){
+            let arr=new Array();
+
+            let melon=document.querySelector("#melon");
+            arr.push(melon.nodeName + "," + melon.nodeValue);
+            arr.push(melon.childNodes.length);
+
+            let span=melon.querySelectorAll("span");
+            arr.push(span[0].nodeName + "," + span[0].nodeValue);
+            arr.push(span[0].childNodes[0].nodeName + "," + span[0].childNodes[0].nodeValue);
+            
+            arr.push(span[1].nodeName + "," + span[1].nodeValue);
+            arr.push(span[1].childNodes[0].nodeName +","+ span[1].childNodes[0].nodeValue);
+            
+            for(let i=0;i<span.length;i++){
+                arr.push(span[i].childNodes[0].nodeValue);
+            }
+            alert(arr.join("\n"));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script>
+        function sub(){
+            let arr=new Array();
+
+            let dauther=document.querySelector("#dauther");
+            let older=dauther.previousSibling;
+            let olderValue=getPreviousSibling(older);
+            arr.push(olderValue);
+
+            let younger=dauther.nextSibling;
+            let youngerValue=getNextSibling(younger);
+            arr.push(youngerValue);
+
+            alert(arr.join("\n"));
+        }
+        //동생
+        function getNextSibling(node){
+            if(node.nodeType==1){
+                return node.childNodes[0].nodeValue;
+            }
+            if(node.nodeType==3){
+                return node.nextSibling.childNodes[0].nodeValue;
+
+            }
+
+        }
+        //형
+        function previousSibling(node){
+
+            if(node.nodeType==1){
+                return node.childNodes[0].nodeValue;
+            }
+            if(node.nodeType==3){
+                return node.previousSibling.childNodes[0].nodeValue;
+
+            }
+
+        }
+    </script>
+</head>
+<body onload="sub()">
+    <h3>형제 DOM</h3>
+   
+    <div id="grandfather">
+        <div id="father">
+            <span id="firstSon">첫째입니다.</span>
+            <span id="dauther">둘째입니다.</span>
+            <span id="seconSon">셋째입니다.</span>
+        </div>
+    </div>
+    <br><br>
+
+    <disp id="disp"></disp>
+</body>
+</html>

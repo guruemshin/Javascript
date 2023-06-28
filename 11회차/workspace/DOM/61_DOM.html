@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <script>
+        function sub(){
+            let arr=new Array();
+            let div=document.createElement("div");
+            div.innerText="방가방가";  //inner.text=속성 "방가방가"=값
+            div.style.color="red";    //style.color=속성 "red"=값
+
+            arr.push(div.innerText);  //속성
+
+
+            let span=document.createElement("span");
+            span.innerHTML="으아아아아";
+            span.setAttribute("style","color:blue");
+            
+
+            arr.push(span.innerText);  //속성
+            alert(arr.join("\n"));
+
+            document.body.appendChild(div);
+            document.body.appendChild(span);
+
+
+        }
+    </script>
+</head>
+<body onload="sub()">
+    <h3>속성 이야 졸라 머ㅏㄶㄹ다!!!!!!@@!~~!~!!~!</h3>
+</body>
+</html>

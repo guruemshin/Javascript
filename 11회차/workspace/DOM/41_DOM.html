@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            list-style-type: none;
+        }
+    </style>
+
+    <script>
+        function test(){
+            let div=document.querySelectorAll("div");
+            div[0].innerHTML="<h3>가</h3>";
+            div[1].innerHTML="<h3>나</h3>";
+            div[2].innerHTML="<h3>다</h3>";
+            div[3].innerHTML="<h3>라</h3>";
+
+
+            let result=document.querySelector("#result");
+            result.innerHTML='<h3 style="color:red">Hello</h3>';
+
+            let li=document.querySelectorAll(".friut");
+            li[0].innerText="사과";
+            li[1].innerText="바나나";
+            li[2].innerText="딸기";
+
+
+        }
+    </script>
+</head>
+<body>
+        <!--Tag선택자-->
+
+
+        <div></div><!-- 0번지 -->
+        <div></div><!-- 1번지 -->
+        <div></div><!-- 2번지 -->
+        <div></div><!-- 3번지 -->
+    
+    
+        <!--ID선택자-->
+        <div id="result"></div>
+    
+        <!--Class선택자-->
+        <ul>
+            <li class="friut"></li>
+            <li class="friut"></li>
+            <li class="friut"></li>
+        </ul>
+    
+    
+        <input type="button" value="click" onclick="test()">
+    
+</body>
+</html>

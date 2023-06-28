@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sub(){
+            let form=document.createElement("form");
+            form.setAttribute("id","createForm");
+            form.setAttribute("action","#");
+            form.setAttribute("method", "get");
+
+             
+            let labelID=document.createElement("label");
+            labelID.innerHTML="아이디";
+            let inputID=document.createElement("input");
+            inputID.setAttribute("type","text");
+            inputID.setAttribute("name","name");
+            inputID.setAttribute("size","12");
+
+            
+
+            let br1=document.createElement("br");
+
+            let labelPWD=document.createElement("lable");
+            labelPWD.innerHTML="비밀번호"
+            let inputPWD=document.createElement("input");
+            inputPWD.setAttribute("type","text");
+            inputPWD.setAttribute("name","name");
+            inputPWD.setAttribute("size","12");
+
+
+
+
+            let br2=document.createElement("br");
+
+
+
+            let inputButton=document.createElement("input");
+            inputButton.setAttribute("type","button");
+            inputButton.setAttribute("value","전송");
+            inputButton.setAttribute("onclick","abc()");
+
+
+            form.appendChild(labelID);
+            form.appendChild(inputID);             
+            form.appendChild(br1);
+            form.appendChild(labelPWD);  
+            form.appendChild(inputPWD);       
+            form.appendChild(br2);
+            form.appendChild(inputButton);
+            document.body.appendChild(form);
+
+        }
+
+        function abc(){
+            let createForm=document.querySelector("#createForm");
+            let name=createForm.name.value;
+            // alert(name);
+
+            let k=/^[가-힣 a-z A-Z]+$/;
+
+            if(!k.test(name)){
+                alert("이름을 올바르게 입력하세요");
+                return;
+            }
+            createForm.submit();
+
+
+        }
+    </script>
+</head>
+<body onload="sub()">
+    
+</body>
+</html>

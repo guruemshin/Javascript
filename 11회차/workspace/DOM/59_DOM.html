@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function sub(){
+            let div=document.createElement("div");
+            div.style.textAlign="center";
+
+            for(let i=0; i<10; i++){
+                let span=document.createElement("span");
+                span.innerText="내용" + (i+1);
+                
+
+                let br=document.createElement("br")
+                
+                div.appendChild(span);
+                div.appendChild(br);
+                
+
+            }
+
+            let h3=document.createElement("h3");
+            h3.style.textAlign="center";
+            h3.innerText="DOM조작";
+
+
+            document.body.appendChild(div);
+            document.body.appendChild(h3);   
+            
+            document.body.removeChild(h3);
+
+
+
+
+        }
+    </script>
+</head>
+<body onload="sub()">
+    <h3>생성 삭제</h3>
+</body>
+</html>

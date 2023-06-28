@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sub(){
+
+            let arr=new Array();
+
+            let div=document.createElement("div");
+            div.innerText="반가반가";
+            div.style.color="red";
+
+            let span=document.createElement("span");
+            span.innerText="목욜모룧";
+            span.setAttribute("style", "color:blue");
+
+            let br=document.createElement("br");
+            
+            let font=document.createElement("font");
+            font.innerText="또만나요";
+            font.setAttribute("size",7);
+            font.setAttribute("color", "red");
+            font.setAttribute("face","맑은 고딕");
+            arr.push(font.getAttribute("size"));
+            arr.push(font.getAttribute("color"));
+            arr.push(font.getAttribute("face"));
+
+            alert(arr.join("\n"));
+
+            document.body.appendChild(div);
+            document.body.appendChild(span);
+            document.body.appendChild(br);
+            document.body.appendChild(font);
+
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
