@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function startRequest(){
+            fetch("responseXML.xml")
+                .then(function(response){
+                    return response.text();
+
+                })
+                .then(function(data){
+                    let parser=new DOMParser();
+                    let xmlData=parser.parseFromString(data,"application/xml");
+
+                    let studentList=xmlData.querySelectorAll("student");
+                    // alert(studentList.length);
+
+                    for(let i=0; i<studentList.length; i++){
+                        let student=studentList[i].childNodes;
+
+                        let div=document.createElement("div");
+                        for(let j=0; j<student.length; j++){
+                            if(student[j].nodeType==1){
+                             // alert(student[j].firstChild.nodeValue);
+
+                                let span=document.createElement("span");
+                                span.innerHTML=student[j].firstChild.nodeValue + "&nbsp;&nbsp;";
+
+                                div.appendChild(span);
+                            }
+                        }
+                        document.querySelector("#disp").appendChild(div);
+                    }
+                });
+        }
+    </script>
+    <h3>FETCH</h3>
+
+    <form action="#">
+        <input type="button" value="요청" onclick="startRequest()">
+    </form>
+    <div id="disp"></div>
+</body>
+</html>

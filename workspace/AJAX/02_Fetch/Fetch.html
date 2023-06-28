@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function startRequest(){
+            fetch("JSON.txt")
+            .then(function(response){
+                return response.json();
+
+            })
+
+            .then(function (data){
+                alert(data);
+
+                let hobby=data.hobby;
+                let hobby1=document.createElement("div");
+                hobby1.innerText=hobby[0];
+                
+                let hobby2=document.createElement("div");
+                hobby2.innerText=hobby[1];
+
+                let family=data.family;
+                let family1=document.createElement("div");
+                family1.innerText=family.father
+
+                let family2=document.createElement("div");
+                family2.innerText=family.cnt;
+
+                let family3=document.createElement("div");
+                family3.innerText=family.mother;
+
+                let disp=document.querySelector("#disp");
+                disp.appendChild(hobby1);
+                disp.appendChild(hobby2);
+                disp.appendChild(family1);
+                disp.appendChild(family2);
+                disp.appendChild(family3);
+
+            });
+        }
+    </script>
+    <h3>FETCH</h3>
+
+    <form action="#">
+        <input type="button" value="요청" onclick="startRequest()">
+    </form>
+    <div id="disp"></div>
+</body>
+</html>

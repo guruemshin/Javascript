@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>날씨 정보</h1>
+    <p id="result"></p>
+    <script>
+        fetch("https://goweather.herokuapp.com/weather/Seoul")
+        .then(function (response){
+            return response.json();
+        })
+        .then(function (data){
+            // alert(data.temperature +","+ data.forecast[0].day);
+            let result=document.querySelector("#result");
+            result.innerText=data.temperature;
+        })
+
+        .catch(function (error){
+            document.write("실패!",error);
+        })
+
+    </script>
+    <br><br>
+    <script>
+        function getWeather(){
+            let city=document.querySelector("#city").value;
+            // alert(city);
+            fetch("https://goweather.herokuapp.com/weather/" + city)
+            .then(function (response){
+                return response.json();
+            })
+
+            .then(function(data){
+                alert(data.temperature);
+                let disp=document.querySelector("#disp");
+                disp.innerText=data.temperature;
+
+
+            })
+            .catch(function(error){
+                document.write("실패!!!!!!!!!!!!!!!!!!");
+            })
+
+
+        }
+    </script>
+    <input type="text" id="city">
+    <input type="button" value="전송" onclick="getWeather()">
+    <h3 id="disp"></h3>
+    
+</body>
+</html>

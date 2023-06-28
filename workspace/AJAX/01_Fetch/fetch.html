@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function startRequest(){
+            fetch("JSON.txt")
+                .then(function (response){
+                    return response.json()
+                })
+                .then(function (data){
+                    alert(data);
+                
+
+                let divName=document.createElement("div");
+                divName.innerText=data.name;
+
+                let divAge=document.createElement("div");
+                divAge.innerText=data.age;
+
+                let divCity=document.createElement("div");
+                divCity.innerText=data.city;
+
+                let disp=document.querySelector("#disp");
+                disp.appendChild(divName);
+                disp.appendChild(divAge);
+                disp.appendChild(divCity);
+                });
+
+
+        }
+    </script>
+    
+    <h3>FETCH</h3>
+
+    <form action="#">
+        <input type="button" value="요청" onclick="startRequest()">
+    </form>
+    <div id="disp"></div>
+</body>
+</html>
